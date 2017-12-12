@@ -15,12 +15,104 @@ export class Test2Component implements OnInit {
     // this.datatype();
     // this.string();
     // this.array();
-    this.sum(1, 2, 3, 4);
+    // this.sum(1, 2, 3, 4);
     // this.testJQuery();
+    // this.testEvent();
+    let a = $('#test-link');
+    let b = $('#testMouseMoveDiv');
+    console.log(a);
+    a.on('click', function () { alert('hello') });
+    a.click(function () { alert('another way') });
+    // $(function () {
+    //   $('#testMouseMoveDiv').mousemove(function (e) {
+    //     $('#testMouseMoveSpan').text('pageX = ' + e.pageX + ', pageY = ' + e.pageY);
+    //   });
+    // });
+
+    function event(e) {
+      $('#testMouseMoveSpan').text('pageX = ' + e.pageX + ', pageY = ' + e.pageY);
+    }
+
+    b.mousemove(event);
+    setTimeout(function () {
+      b.off('mousemove', event);
+    }, 3000);
+
+    let input = $('#test-input');
+    input.val('change');
+    input.change(function () { console.log('text has been changed') });
+
+    let b1 = $("#button1");
+    let b2 = $("#button2");
+    function popwindow() {
+      window.open('/');
+    }
+    b1.click(function () { popwindow(); });
+    b2.click(function () {
+      setTimeout(function () {
+        popwindow()
+      }, 3000);
+    });
+    let form = $('#test-form'),
+      langs = form.find('[name=lang]'),
+      selectAll = form.find('label.selectAll :checkbox'),
+      selectAllLabel = form.find('label.selectAll span.selectAll'),
+      deselectAllLabel = form.find('label.selectAll span.deselectAll'),
+      invertSelect = form.find('a.invertSelect');
+    // 重置初始化状态:
+    form.find('*').show().off();
+    form.find(':checkbox').prop('checked', false).off();
+    deselectAllLabel.hide();
+    // 拦截form提交事件:
+    form.off().submit(function (e) {
+      e.preventDefault();
+      alert(form.serialize());
+    });
+    selectAll.click(function () {
+      if (this.checked) {
+        langs.prop('checked', true);
+        selectAllLabel.hide();
+        deselectAllLabel.show();
+      } else {
+        langs.prop('checked', false);
+        selectAllLabel.show();
+        deselectAllLabel.hide();
+      }
+    });
+    invertSelect.click(function () {
+      langs.map(function () {
+        $(this).prop('checked', !$(this).prop('checked'));
+      });
+    });
+    langs.click(function () {
+      if (langs.filter(':checked').length === langs.length) {
+        selectAll.prop('checked', true);
+        selectAllLabel.hide();
+        deselectAllLabel.show();
+      } else {
+        selectAll.prop('checked', false);
+        selectAllLabel.show();
+        deselectAllLabel.hide();
+      }
+    });
+
+  }
+  testEvent() {
+    let a = $('test-link');
+    a.on('click', function () { alert('hello') });
   }
   testJQuery() {
-    let ul = $('#test-div');
+    let ul = $('#test-div>ul');
+    ul.append('<li><span>Haskell</span></li>');
+
+    let ps = document.createElement('li');
+    ps.innerHTML = 'Pascal';
+    ul.prepend(ps);
+    ul.append(ps);
     console.log(ul);
+    let js = $('#test-div>ul>li:first-child');
+    js.after('<li><span>Second</span></li>');
+    js.remove();
   }
   sum(...rest) {
     console.log(rest);

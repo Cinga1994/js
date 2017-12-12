@@ -1,27 +1,33 @@
 <p>
   test2 works!
 </p>
-<!-- HTML结构 -->
-<ul class="lang">
-    <li class="js dy">JavaScript</li>
-    <li class="dy">Python</li>
-    <li id="swift">Swift</li>
-    <li class="dy">Scheme</li>
-    <li name="haskell">Haskell</li>
-</ul>
-<!-- HTML结构 -->
-<style>
-.highlight {
-    color: #dd1144;
-    background-color: #ffd351;
-}
-</style>
 
 <div id="test-div">
-    <ul>
-        <li class="py"><span>Python</span></li>
-        <li class="js"><span>JavaScript</span></li>
-        <li class="sw"><span>Swift</span></li>
-        <li class="hk"><span>Haskell</span></li>
-    </ul>
+  <ul>
+    <li><span>JavaScript</span></li>
+    <li><span>Python</span></li>
+    <li><span>Swift</span></li>
+  </ul>
 </div>
+<a id="test-link" href="#0">点我试试</a>
+<span id="testMouseMoveSpan">pageX = , pageY = </span>
+<div id="testMouseMoveDiv" style="display: block; width: 300px; height: 120px; border: 1px solid #ccc;">
+  在此区域移动鼠标试试</div>
+
+  <input id="test-input" type="text" />
+  <button id="button1">button1</button>
+  <button id="button2">button2</button>
+
+  <!-- HTML结构 -->
+<form id="test-form" action="test">
+    <legend>请选择想要学习的编程语言：</legend>
+    <fieldset>
+        <p><label class="selectAll"><input type="checkbox"> <span class="selectAll">全选</span><span class="deselectAll">全不选</span></label> <a href="#0" class="invertSelect">反选</a></p>
+        <p><label><input type="checkbox" name="lang" value="javascript"> JavaScript</label></p>
+        <p><label><input type="checkbox" name="lang" value="python"> Python</label></p>
+        <p><label><input type="checkbox" name="lang" value="ruby"> Ruby</label></p>
+        <p><label><input type="checkbox" name="lang" value="haskell"> Haskell</label></p>
+        <p><label><input type="checkbox" name="lang" value="scheme"> Scheme</label></p>
+        <p><button type="submit">Submit</button></p>
+    </fieldset>
+</form>
