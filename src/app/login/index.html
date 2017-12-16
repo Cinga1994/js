@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+username:<input type="text" placeholder="enter username" [(ngModel)]="username">
+<br>
+ <!-- password:<input type="text"  [(ngModel)]="password"> -->
+ <nz-input [(ngModel)]="password" [nzPlaceHolder]="'Basic usage'" (ngModelChange)="_console($event)"></nz-input>
+<br>
+
+<!-- <button (click)="loginClicked($event)">login</button> -->
+<button nz-button [nzType]="'primary'" (click)="loginClicked($event)">login</button>

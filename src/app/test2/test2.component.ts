@@ -168,14 +168,14 @@ export class Test2Component implements OnInit {
     console.log(lower);
   }
   datatype() {
-    const a;
-    var b = null;
-    console.log(a);//undefined
-    console.log(a + 1);//NaN
-    console.log(b);//null
-    console.log(a + '1');//undefined1
-    console.log(1 / 0);//infinity
-    console.log(NaN === NaN);//false
-    console.log(isNaN(NaN));//true
+    // const a;
+    // var b = null;
+    // console.log(a);//undefined
+    // console.log(a + 1);//NaN
+    // console.log(b);//null
+    // console.log(a + '1');//undefined1
+    // console.log(1 / 0);//infinity
+    // console.log(NaN === NaN);//false
+    // console.log(isNaN(NaN));//true
   }
 }

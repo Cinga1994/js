@@ -61,12 +61,12 @@ function callback(){
 
   }
   testfileupload() {
-    var f = document.getElementById("test-file-upload");
-    var filename = f.value;
-    if (!filename || !(filename.endsWith('.jpg') || filename.endsWith('.png') || filename.endsWith('.gif'))) {
-      alert('Can only upload image file.');
-      return false;
-    }
+    // var f = document.getElementById("test-file-upload");
+    // var filename = f.value;
+    // if (!filename || !(filename.endsWith('.jpg') || filename.endsWith('.png') || filename.endsWith('.gif'))) {
+    //   alert('Can only upload image file.');
+    //   return false;
+    // }
   }
   testDom() {
     var menu = document.getElementById('drink-menu');
@@ -108,10 +108,10 @@ function callback(){
   test23() {
     class Student {
       constructor(name) {
-        this.name = name;
+        // this.name = name;
       }
       hello() {
-        console.log('hello' + this.name);
+        // console.log('hello' + this.name);
       }
     }
     var gxj = new Student('gxj');
@@ -119,10 +119,10 @@ function callback(){
     class PrimaryStudent extends Student {
       constructor(name, grade) {
         super(name);
-        this.grade = grade;
+        // this.grade = grade;
       }
       mygrade() { //不能与grade同名
-        console.log('grade is ' + this.grade);
+        // console.log('grade is ' + this.grade);
       }
     }
     var g = new PrimaryStudent('hhh', 31);
@@ -285,10 +285,10 @@ function callback(){
     inner();
   }
   test10() {
-    var map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
-    for (var x of map) {
-      console.log(x[0] + ' ' + x[1]);
-    }
+    // var map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
+    // for (var x of map) {
+    //   console.log(x[0] + ' ' + x[1]);
+    // }
   }
   test9() {
     var a = ['1', '2', '3'];
@@ -415,7 +415,7 @@ function callback(){
         return -x;
       }
     };
-    console.log(y());
+    // console.log(y());
   }
   abs(x) {
     if (x >= 0) {
